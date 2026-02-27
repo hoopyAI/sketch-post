@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Claude local config — only commit the skills folder
+.claude/settings.local.json
+.claude/ai-illustration-post/
+
+# Environment variables
+.env
+
+# Generated content — keep folders, ignore contents
+prompts/*
+!prompts/.gitkeep
+
+output/*
+!output/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
