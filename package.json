@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@google/genai": "^1.43.0",
+    "dotenv": "^17.3.1",
+    "tsx": "^4.21.0"
+  }
+}
