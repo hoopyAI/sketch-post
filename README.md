@@ -111,30 +111,24 @@ Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/ske
 
 本插件使用 **Google AI（Gemini）API** 进行图片生成。
 
-#### 获取免费 API Key
+#### 获取并配置 API Key
+
+**第一步：获取 Key**
 
 1. 访问 [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. 用 Google 账号登录
-3. 点击 **Create API key**
-4. 配置 API Key（二选一）：
+2. 用 Google 账号登录（免费）
+3. 点击 **Create API key** → 选择或新建一个 Google Cloud 项目
+4. 复制生成的 Key（格式为 `AIza` 开头）
 
-**方式 A — `.env` 文件**（推荐，永久生效）
+**第二步：写入 `.env` 文件**
 
-在你运行命令的工作目录下创建 `.env` 文件：
+在你运行 sketch-post 命令的工作目录下创建 `.env` 文件（如果没有的话），写入：
 
 ```
-GOOGLE_AI_API_KEY=AIza...
+GOOGLE_AI_API_KEY=AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-**方式 B — 环境变量**（临时，当前终端会话有效）
-
-```bash
-# macOS / Linux
-export GOOGLE_AI_API_KEY=AIza...
-
-# Windows PowerShell
-$env:GOOGLE_AI_API_KEY="AIza..."
-```
+> `.env` 文件已在 `.gitignore` 中排除，不会被提交到代码仓库。
 
 #### 使用模型
 
@@ -277,30 +271,24 @@ Start a new session and say: "Create a sketch-post about climate change" — you
 
 This plugin uses the **Google AI (Gemini) API** for image generation.
 
-#### Get a free API key
+#### Get and configure your API key
+
+**Step 1: Get the key**
 
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Sign in with your Google account
-3. Click **Create API key**
-4. Configure the key — pick one:
+2. Sign in with a Google account (free)
+3. Click **Create API key** → select or create a Google Cloud project
+4. Copy the generated key — it starts with `AIza`
 
-**Option A — `.env` file** (recommended, persists across sessions)
+**Step 2: Add it to a `.env` file**
 
-Create a `.env` file in your working directory:
+Create a `.env` file in the directory where you run sketch-post (if one doesn't exist already):
 
 ```
-GOOGLE_AI_API_KEY=AIza...
+GOOGLE_AI_API_KEY=AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-**Option B — environment variable** (temporary, current terminal session only)
-
-```bash
-# macOS / Linux
-export GOOGLE_AI_API_KEY=AIza...
-
-# Windows PowerShell
-$env:GOOGLE_AI_API_KEY="AIza..."
-```
+> The `.env` file is listed in `.gitignore` and will not be committed to your repository.
 
 #### Model
 
