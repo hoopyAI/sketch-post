@@ -13,7 +13,7 @@ Follow these 5 phases IN ORDER. After each phase, WAIT for the user's confirmati
 
 ## Phase 1 — Topic Brainstorm (话题发现)
 
-1. If the user has already specified a topic, skip to step 3.
+1. If the user has already specified a topic, skip directly to Phase 2.
 2. Otherwise, use WebSearch to find what's trending in the relevant domain from the past 7 days. Search in both English and Chinese. Tailor your search queries to the domain the user is interested in (e.g. technology, health, finance, culture, science, travel, etc.).
 3. Present **5-8 topic candidates**, each with:
    - Topic name (Chinese + English)
