@@ -116,10 +116,24 @@ Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/ske
 1. 访问 [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. 用 Google 账号登录
 3. 点击 **Create API key**
-4. 将 key 写入项目 `.env` 文件：
+4. 配置 API Key（二选一）：
+
+**方式 A — `.env` 文件**（推荐，永久生效）
+
+在你运行命令的工作目录下创建 `.env` 文件：
 
 ```
 GOOGLE_AI_API_KEY=AIza...
+```
+
+**方式 B — 环境变量**（临时，当前终端会话有效）
+
+```bash
+# macOS / Linux
+export GOOGLE_AI_API_KEY=AIza...
+
+# Windows PowerShell
+$env:GOOGLE_AI_API_KEY="AIza..."
 ```
 
 #### 使用模型
@@ -268,10 +282,24 @@ This plugin uses the **Google AI (Gemini) API** for image generation.
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. Sign in with your Google account
 3. Click **Create API key**
-4. Add it to your project's `.env` file:
+4. Configure the key — pick one:
+
+**Option A — `.env` file** (recommended, persists across sessions)
+
+Create a `.env` file in your working directory:
 
 ```
 GOOGLE_AI_API_KEY=AIza...
+```
+
+**Option B — environment variable** (temporary, current terminal session only)
+
+```bash
+# macOS / Linux
+export GOOGLE_AI_API_KEY=AIza...
+
+# Windows PowerShell
+$env:GOOGLE_AI_API_KEY="AIza..."
 ```
 
 #### Model
