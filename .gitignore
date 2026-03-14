@@ -16,6 +16,9 @@ prompts/*
 output/*
 !output/.gitkeep
 
+# Internal planning docs — keep local only
+docs/
+
 # OS
 .DS_Store
 Thumbs.db
