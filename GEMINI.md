@@ -8,8 +8,8 @@ When the user asks to create a post, brainstorm topics, or generate illustration
 
 ## Phase 1 — Topic Brainstorm (话题发现)
 
-1. If the user has already specified a topic, skip to step 3.
-2. Use web search to find what's trending in the relevant domain from the past 7 days. Tailor search queries to the domain the user is interested in (technology, health, finance, culture, science, travel, etc.).
+1. If the user has already specified a topic, skip directly to Phase 2.
+2. Otherwise, use web search to find what's trending in the relevant domain from the past 7 days. Search in both English and Chinese. Tailor search queries to the domain the user is interested in (e.g. technology, health, finance, culture, science, travel, etc.).
 3. Present **5-8 topic candidates**, each with:
    - Topic name (Chinese + English)
    - Why it's relevant or trending (1-2 sentences)
