@@ -1,0 +1,14 @@
+{
+  "name": "sketch-post",
+  "displayName": "Sketch Post",
+  "description": "AI-powered workflow for generating hand-drawn illustration posts for social media",
+  "version": "1.0.0",
+  "author": {
+    "name": "hoopyAI"
+  },
+  "homepage": "https://github.com/hoopyAI/BananaPostCreator",
+  "repository": "https://github.com/hoopyAI/BananaPostCreator",
+  "license": "MIT",
+  "keywords": ["image-generation", "illustration", "social-media", "gemini", "xiaohongshu", "chinese"],
+  "skills": "./skills/"
+}
