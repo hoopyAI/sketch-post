@@ -19,7 +19,7 @@ The moment you ask your agent to create a post, sketch-post doesn't just start g
 ### Claude Code (GitHub)
 
 ```bash
-/plugin install github:hoopyAI/BananaPostCreator
+/plugin install github:hoopyAI/sketch-post
 ```
 
 ### Cursor
@@ -35,7 +35,7 @@ Or search for "sketch-post" in the Cursor plugin marketplace.
 ### Gemini CLI
 
 ```bash
-gemini extensions install https://github.com/hoopyAI/BananaPostCreator
+gemini extensions install https://github.com/hoopyAI/sketch-post
 ```
 
 To update:
@@ -61,7 +61,7 @@ clawhub update sketch-post
 Tell Codex:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/BananaPostCreator/main/README.md
+Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/sketch-post/main/README.md
 ```
 
 ### OpenCode
@@ -69,7 +69,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/Ban
 Tell OpenCode:
 
 ```
-Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/BananaPostCreator/main/README.md
+Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/sketch-post/main/README.md
 ```
 
 ### Verify Installation
@@ -127,5 +127,5 @@ MIT License — see [LICENSE](LICENSE) file for details.
 
 ## Support
 
-- **Issues**: https://github.com/hoopyAI/BananaPostCreator/issues
+- **Issues**: https://github.com/hoopyAI/sketch-post/issues
 
