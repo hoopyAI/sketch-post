@@ -10,7 +10,7 @@
 
 ## 中文
 
-sketch-post 是一个五阶段 AI 工作流，用于创作手绘风格中文插画社交媒体图文，由 **Nano Banana 2**（Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`）驱动。每篇图文 6–8 页，3:4 竖版，专为小红书、微信等平台设计。
+sketch-post 是一个五阶段 AI 工作流，用于创作手绘风格中文插画社交媒体图文，由 **Nano Banana 2**（Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`）驱动。每篇图文 6–8 页，3:4 竖版，适合发布于任何社交媒体平台。
 
 ### 工作原理
 
@@ -105,7 +105,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/ske
 
 #### 验证安装
 
-新开一个会话，说：「帮我做一个关于 AI 的小红书图文」——AI 助手会自动识别技能并启动第一阶段。
+新开一个会话，说：「帮我做一个关于气候变化的图文」——AI 助手会自动识别技能并启动第一阶段。
 
 ### 前置条件
 
@@ -162,7 +162,7 @@ MIT License — 详见 [LICENSE](LICENSE) 文件。
 
 ## English
 
-sketch-post is a 5-phase AI workflow for creating hand-drawn Chinese illustration posts for social media, powered by **Nano Banana 2** (Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`). Each post is 6–8 pages in 3:4 portrait format, designed for platforms like Xiaohongshu and WeChat.
+sketch-post is a 5-phase AI workflow for creating hand-drawn Chinese illustration posts for social media, powered by **Nano Banana 2** (Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`). Each post is 6–8 pages in 3:4 portrait format, suitable for any social media platform.
 
 ### How it works
 
