@@ -172,11 +172,11 @@ The moment you ask your agent to create a post, sketch-post doesn't just start g
 
 ```mermaid
 flowchart LR
-    A["🔍 **Phase 1**\n话题发现\nTopic Brainstorm\n搜索本周AI热点\n用户选题"]
-    B["📚 **Phase 2**\n深度调研\nDeep Research\n3-5个信息源\n整理关键事实"]
-    C["📋 **Phase 3**\n内容结构\nContent Structure\n设计6-8页大纲\n用户确认"]
-    D["✏️ **Phase 4**\n提示词编写\nPrompt Crafting\n生成图像提示词\n保存JSON"]
-    E["🎨 **Phase 5**\n图片生成\nImage Generation\nNano Banana 2\n自动预览"]
+    A["🔍 **Phase 1**\nTopic Brainstorm\nSearch trending topics\nUser picks one"]
+    B["📚 **Phase 2**\nDeep Research\n3-5 sources\nKey facts & quotes"]
+    C["📋 **Phase 3**\nContent Structure\n6-8 page outline\nUser confirms"]
+    D["✏️ **Phase 4**\nPrompt Crafting\nIllustration prompts\nSave JSON"]
+    E["🎨 **Phase 5**\nImage Generation\nNano Banana 2\nAuto preview"]
 
     A --> B --> C --> D --> E
 
@@ -257,7 +257,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/ske
 
 #### Verify Installation
 
-Start a new session and say: "帮我做一个关于 AI 的小红书图文" — your agent should automatically pick up the skill and begin Phase 1.
+Start a new session and say: "Create a sketch-post about climate change" — your agent should automatically pick up the skill and begin Phase 1.
 
 ### Prerequisites
 
@@ -284,11 +284,11 @@ The free tier allows limited requests per minute. If you hit rate limits, the sc
 
 ### The 5-Phase Workflow
 
-1. **Topic Brainstorm** (话题发现) — searches for trending AI topics this week, presents 5-8 candidates with audience appeal, waits for your pick
-2. **Deep Research** (深度调研) — researches 3-5 sources, collects key facts, expert quotes, real-world impact, writes Chinese summary, waits for your angle confirmation
-3. **Content Structure** (内容结构) — proposes a 6-8 page outline where every page is substantive content, waits for your approval
-4. **Prompt Crafting** (提示词编写) — writes a detailed image generation prompt for each page in Da Vinci sketch + watercolor style, saves to JSON, waits for your sign-off
-5. **Image Generation** (图片生成) — runs Nano Banana 2 to generate all pages, auto-opens a browser preview, asks if any pages need regenerating
+1. **Topic Brainstorm** — searches for what's trending in your domain this week, presents 5-8 candidates with audience appeal, waits for your pick
+2. **Deep Research** — researches 3-5 sources, collects key facts, expert quotes, real-world impact, writes a summary, waits for your angle confirmation
+3. **Content Structure** — proposes a 6-8 page outline where every page is substantive content, waits for your approval
+4. **Prompt Crafting** — writes a detailed illustration prompt for each page in Da Vinci sketch + watercolor style, saves to JSON, waits for your sign-off
+5. **Image Generation** — runs Nano Banana 2 to generate all pages, auto-opens a browser preview, asks if any pages need regenerating
 
 **Each phase waits for confirmation before proceeding.** Nothing moves forward without your say.
 
