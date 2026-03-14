@@ -122,19 +122,17 @@ Follow these 5 phases IN ORDER. After each phase, WAIT for the user's confirmati
    **Unix / macOS:**
    ```bash
    SCRIPT=$(find ~/.claude/plugins -name "generate-post.ts" -path "*/sketch-post/*" 2>/dev/null | head -1)
-   npx -y -p tsx -p @google/genai -p dotenv tsx "$SCRIPT" prompts/{topic}_{date}.json --no-upload
+   npx -y -p tsx -p @google/genai -p dotenv tsx "$SCRIPT" prompts/{topic}_{date}.json
    ```
 
    **Windows (PowerShell):**
    ```powershell
    $SCRIPT = Get-ChildItem "$env:LOCALAPPDATA\.claude\plugins" -Recurse -Filter "generate-post.ts" | Where-Object { $_.FullName -like "*sketch-post*" } | Select-Object -First 1 -ExpandProperty FullName
-   npx -y -p tsx -p @google/genai -p dotenv tsx $SCRIPT prompts/{topic}_{date}.json --no-upload
+   npx -y -p tsx -p @google/genai -p dotenv tsx $SCRIPT prompts/{topic}_{date}.json
    ```
 
    The script validates that `GOOGLE_AI_API_KEY` is set, enforces `style = 彩色达芬奇手绘风中文插画`, `aspect_ratio = 3:4`, `resolution = 1K`, and validates page count (6-8).
-   - Style reference images are auto-loaded from `samples/` in your project root (if present).
    - The script auto-opens `preview.html` in the browser when generation completes.
-   - Use `--no-upload` by default; omit it only after reviewing and approving the images.
 
 2. Monitor the output and report progress to the user as pages are generated.
 3. When generation completes, tell the user:

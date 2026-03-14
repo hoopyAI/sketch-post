@@ -2,9 +2,6 @@ import "dotenv/config";
 import { GoogleGenAI, type Part } from "@google/genai";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 interface PagePrompt {
   page: number;
@@ -25,6 +22,10 @@ const STYLE = "彩色达芬奇手绘风中文插画";
 const ASPECT_RATIO = "3:4";
 const RESOLUTION = "1K";
 
+function pageFilename(n: number): string {
+  return `page_${String(n).padStart(2, "0")}.png`;
+}
+
 function parseArgs(): { promptsFile: string; pages?: number[]; dryRun: boolean } {
   const args = process.argv.slice(2);
   let promptsFile = "";
@@ -44,7 +45,7 @@ function parseArgs(): { promptsFile: string; pages?: number[]; dryRun: boolean }
 
   if (!promptsFile) {
     console.error(
-      "Usage: npx tsx .claude/skills/ai-illustration-post/scripts/generate-post.ts <prompts.json> [--pages 3,5] [--dry-run]"
+      "Usage: npx tsx skills/sketch-post/scripts/generate-post.ts <prompts.json> [--pages 3,5] [--dry-run]"
     );
     process.exit(1);
   }
@@ -64,10 +65,9 @@ function escapeHtml(text: string): string {
 function renderPreview(outputDir: string, data: PromptsData): string {
   const cards = data.pages
     .map((page) => {
-      const filename = String(page.page).padStart(2, "0");
       return `
         <div class="card">
-          <img src="page_${filename}.png" alt="Page ${page.page}: ${escapeHtml(page.title)}">
+          <img src="${pageFilename(page.page)}" alt="Page ${page.page}: ${escapeHtml(page.title)}">
           <div class="card-info">
             <div class="page-num">Page ${page.page}</div>
             <div class="page-title">${escapeHtml(page.title)}</div>
@@ -121,8 +121,8 @@ async function generateImage(
     config: {
       responseModalities: ["IMAGE"],
       imageConfig: {
-        aspectRatio: ASPECT_RATIO as "3:4",
-        imageSize: RESOLUTION as "1K",
+        aspectRatio: ASPECT_RATIO,
+        imageSize: RESOLUTION,
       },
     },
   });
@@ -143,26 +143,20 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function normalizePromptsData(data: PromptsData): PromptsData {
-  const normalized = { ...data };
-  normalized.style = STYLE;
-  normalized.aspect_ratio = ASPECT_RATIO;
-  normalized.resolution = RESOLUTION;
-  return normalized;
-}
-
 async function main() {
   const { promptsFile, pages: targetPages, dryRun } = parseArgs();
   const promptsPath = path.resolve(process.cwd(), promptsFile);
 
-  if (!fs.existsSync(promptsPath)) {
+  let raw: string;
+  try {
+    raw = fs.readFileSync(promptsPath, "utf-8");
+  } catch {
     console.error(`Prompts file not found: ${promptsPath}`);
     process.exit(1);
   }
 
-  const raw = fs.readFileSync(promptsPath, "utf-8");
   const parsed = JSON.parse(raw) as PromptsData;
-  const data = normalizePromptsData(parsed);
+  const data: PromptsData = { ...parsed, style: STYLE, aspect_ratio: ASPECT_RATIO, resolution: RESOLUTION };
 
   if (!data.pages || data.pages.length < 6 || data.pages.length > 8) {
     console.error("Skill rule check failed: pages must be 6-8.");
@@ -179,7 +173,7 @@ async function main() {
     }
   }
 
-  const safeTopic = data.topic.replace(/ /g, "_").replace(/\//g, "_");
+  const safeTopic = data.topic.replace(/[ /]/g, "_");
   const outputDir = path.join(process.cwd(), "output", `${safeTopic}_${data.date}`);
   fs.mkdirSync(outputDir, { recursive: true });
 
@@ -233,8 +227,7 @@ async function main() {
     }
 
     if (imageData) {
-      const filename = `page_${String(page.page).padStart(2, "0")}.png`;
-      const filepath = path.join(outputDir, filename);
+      const filepath = path.join(outputDir, pageFilename(page.page));
       fs.writeFileSync(filepath, imageData);
       console.log(`  Saved: ${filepath}`);
       successCount++;
