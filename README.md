@@ -8,7 +8,7 @@ The moment you ask your agent to create a post, sketch-post doesn't just start g
 
 ## Installation
 
-**Note:** Installation differs by platform. Claude Code and Cursor have built-in plugin marketplaces. Gemini CLI uses the extensions system. Codex and OpenCode require a manual fetch step.
+**Note:** Installation differs by platform. Claude Code and Cursor have built-in plugin marketplaces. Gemini CLI uses the extensions system. OpenClaw uses ClawHub. Codex and OpenCode require a manual fetch step.
 
 ### Claude Code (Official Marketplace)
 
@@ -42,6 +42,18 @@ To update:
 
 ```bash
 gemini extensions update sketch-post
+```
+
+### OpenClaw
+
+```bash
+clawhub install hoopyAI/sketch-post
+```
+
+To update:
+
+```bash
+clawhub update sketch-post
 ```
 
 ### Codex
