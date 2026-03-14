@@ -1,170 +1,119 @@
-# BananaPostCreator
+# sketch-post
 
-A Claude Code project for generating hand-drawn style Chinese illustration posts about AI topics, powered by Google's **Nano Banana 2** (Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`) image generation model.
+sketch-post is a 5-phase AI workflow for creating hand-drawn Chinese illustration posts for social media, powered by **Nano Banana 2** (Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`).
 
-Each post is 6–8 pages in 3:4 portrait format — designed for social media platforms like Xiaohongshu and WeChat. The visual style is 彩色达芬奇手绘风 (Da Vinci sketch + bright watercolor, vintage notebook background).
+## How it works
 
----
+The moment you ask your agent to create a post, sketch-post doesn't just start generating images. Instead, it steps back and searches for what's actually trending — then asks you which topic you want to explore. Once you've picked a direction, it digs into real sources, assembles a page-by-page content outline, and shows it to you before writing a single prompt. Only after you've signed off on the structure does it craft detailed illustration prompts for each page and fire up the image generator. The whole process is built around confirmation gates — you stay in control at every step, and nothing moves forward without your say.
 
-## Setup
+## Installation
 
-There are two ways to use this skill — pick whichever fits your workflow.
+**Note:** Installation differs by platform. Claude Code and Cursor have built-in plugin marketplaces. Gemini CLI uses the extensions system. Codex and OpenCode require a manual fetch step.
 
----
-
-### Option A: Clone the full repo
-
-Best if you want the complete project (scripts, prompts folder, preview output).
+### Claude Code (Official Marketplace)
 
 ```bash
-git clone https://github.com/your-username/BananaPostCreator.git
-cd BananaPostCreator
+/plugin install sketch-post@hoopyAI
 ```
 
-Then open the folder in Claude Code:
+### Claude Code (GitHub)
 
 ```bash
-claude .
+/plugin install github:hoopyAI/BananaPostCreator
 ```
 
-Install dependencies and configure your API key (see [API Setup](#api-setup)):
+### Cursor
+
+In Cursor Agent chat:
+
+```text
+/add-plugin sketch-post
+```
+
+Or search for "sketch-post" in the Cursor plugin marketplace.
+
+### Gemini CLI
 
 ```bash
-npm install
-cp .env.example .env
-# edit .env and add your GOOGLE_AI_API_KEY
+gemini extensions install https://github.com/hoopyAI/BananaPostCreator
 ```
 
----
-
-### Option B: Copy just the skill
-
-If you already have a project open in Claude Code and just want the skill, copy the skill folder into your project:
+To update:
 
 ```bash
-cp -r .claude/skills/ai-illustration-post /your-project/.claude/skills/
+gemini extensions update sketch-post
 ```
 
-Then install dependencies in your project root:
+### Codex
 
-```bash
-npm install tsx @google/genai dotenv
-```
-
-And create a `.env` with your API key. The skill will be available immediately in Claude Code — no restart needed.
-
----
-
-### Run the skill
-
-Once set up, open the project in Claude Code and type:
+Tell Codex:
 
 ```
-/ai-illustration-post
+Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/BananaPostCreator/main/README.md
 ```
 
-Or just describe what you want and Claude will pick up the skill automatically:
+### OpenCode
+
+Tell OpenCode:
 
 ```
-帮我做一个关于 Claude Code Skill 的小红书图文
+Fetch and follow instructions from https://raw.githubusercontent.com/hoopyAI/BananaPostCreator/main/README.md
 ```
 
----
+### Verify Installation
 
-## API Setup
+Start a new session and say: "帮我做一个关于 AI 的小红书图文" — your agent should automatically pick up the skill and begin Phase 1.
 
-This project uses the **Google AI (Gemini) API** for image generation.
+## Prerequisites
+
+This plugin uses the **Google AI (Gemini) API** for image generation.
 
 ### Get a free API key
 
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. Sign in with your Google account
 3. Click **Create API key**
-4. Copy the key and paste it into your `.env` file:
+4. Add it to your project's `.env` file:
 
 ```
 GOOGLE_AI_API_KEY=AIza...
 ```
 
-### Model used
+### Model
 
 | Model | API name | Notes |
 |---|---|---|
 | Nano Banana 2 | `gemini-3.1-flash-image-preview` | Default — fast, high quality |
 
-The free tier allows limited requests per minute. If you hit rate limits, the script will automatically retry with exponential backoff.
+The free tier allows limited requests per minute. If you hit rate limits, the script retries automatically with exponential backoff (5 attempts). For higher throughput, upgrade to a paid plan in [Google AI Studio](https://aistudio.google.com/app/apikey).
 
-For higher throughput, upgrade to a paid plan in [Google AI Studio](https://aistudio.google.com/app/apikey).
+## The 5-Phase Workflow
 
----
+1. **Topic Brainstorm** (话题发现) — searches for trending AI topics this week, presents 5-8 candidates with audience appeal, waits for your pick
+2. **Deep Research** (深度调研) — researches 3-5 sources, collects key facts, expert quotes, real-world impact, writes Chinese summary, waits for your angle confirmation
+3. **Content Structure** (内容结构) — proposes a 6-8 page outline where every page is substantive content, waits for your approval
+4. **Prompt Crafting** (提示词编写) — writes a detailed image generation prompt for each page in Da Vinci sketch + watercolor style, saves to JSON, waits for your sign-off
+5. **Image Generation** (图片生成) — runs Nano Banana 2 to generate all pages, auto-opens a browser preview, asks if any pages need regenerating
 
-## The `ai-illustration-post` Skill
+**Each phase waits for confirmation before proceeding.** Nothing moves forward without your say.
 
-Located at `.claude/skills/ai-illustration-post/SKILL.md`, this skill runs a **5-phase workflow** inside Claude Code to go from topic idea to finished images.
+## What's Inside
 
-### How it works
+| Skill | Trigger | Purpose |
+|---|---|---|
+| `sketch-post` | `/sketch-post` or describe a post creation task | Full 5-phase illustration post workflow |
 
-```
-Phase 1 → Topic Brainstorm    搜索本周AI热点，让用户选题
-Phase 2 → Deep Research       多源调研，整理关键事实
-Phase 3 → Content Structure   设计6-8页内容结构，用户确认
-Phase 4 → Prompt Crafting     为每页生成图像提示词，保存JSON
-Phase 5 → Image Generation    调用 Nano Banana 2 批量生成图片
-```
-
-Each phase waits for your confirmation before proceeding.
-
-### Skill structure
-
-```
-.claude/skills/ai-illustration-post/
-├── SKILL.md                  ← Workflow instructions for Claude
-└── scripts/
-    └── generate-post.ts      ← Image generation script (TypeScript)
-```
-
-### Triggering the skill
-
-**Manual** — type the slash command:
-```
-/ai-illustration-post
-```
-
-**Automatic** — Claude picks it up when you describe a post creation task in Chinese or English.
-
-### Image generation script
-
-The script is called automatically in Phase 5, but you can also run it directly:
+## Updating
 
 ```bash
-# Generate all pages
-npx tsx .claude/skills/ai-illustration-post/scripts/generate-post.ts prompts/your-topic_2026-02-27.json
-
-# Regenerate specific pages only
-npx tsx .claude/skills/ai-illustration-post/scripts/generate-post.ts prompts/your-topic_2026-02-27.json --pages 1,3
-
-# Dry run (preview prompts without calling the API)
-npx tsx .claude/skills/ai-illustration-post/scripts/generate-post.ts prompts/your-topic_2026-02-27.json --dry-run
+/plugin update sketch-post
 ```
 
-Output is saved to `output/{topic}_{date}/`. Open `preview.html` in that folder to view all pages in a grid.
+## License
 
----
+MIT License — see [LICENSE](LICENSE) file for details.
 
-## Project Structure
+## Support
 
-```
-BananaPostCreator/
-├── .claude/
-│   └── skills/
-│       └── ai-illustration-post/
-│           ├── SKILL.md              ← Claude Code skill definition
-│           └── scripts/
-│               └── generate-post.ts  ← Nano Banana 2 image generator
-├── prompts/                          ← Generated prompt JSON files (gitignored)
-├── output/                           ← Generated images + preview HTML (gitignored)
-├── .env                              ← Your API key (gitignored)
-├── .env.example                      ← Template for .env
-└── package.json
-```
+- **Issues**: https://github.com/hoopyAI/BananaPostCreator/issues
 
