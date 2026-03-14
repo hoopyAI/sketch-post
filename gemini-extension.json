@@ -1,0 +1,6 @@
+{
+  "name": "sketch-post",
+  "description": "AI-powered workflow for generating hand-drawn illustration posts for social media",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}
