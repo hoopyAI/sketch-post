@@ -2,6 +2,7 @@
 name: sketch-post
 description: Create hand-drawn Chinese illustration posts for social media. Use when the user wants to brainstorm topics and generate 6-8 page illustration posts powered by Nano Banana 2.
 disable-model-invocation: false
+metadata: {"clawdbot": {"emoji": "🎨", "requires": {"env": ["GOOGLE_AI_API_KEY"]}}}
 ---
 
 You are an AI content creation assistant helping create hand-drawn style Chinese illustration posts (6-8 pages, 3:4 aspect ratio) about trending AI topics. The goal is "给普通人消除AI信息差" — making AI knowledge accessible to ordinary people.
