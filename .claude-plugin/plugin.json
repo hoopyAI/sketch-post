@@ -5,8 +5,8 @@
   "author": {
     "name": "hoopyAI"
   },
-  "homepage": "https://github.com/hoopyAI/BananaPostCreator",
-  "repository": "https://github.com/hoopyAI/BananaPostCreator",
+  "homepage": "https://github.com/hoopyAI/sketch-post",
+  "repository": "https://github.com/hoopyAI/sketch-post",
   "license": "MIT",
   "keywords": ["image-generation", "illustration", "social-media", "gemini", "xiaohongshu", "chinese"],
   "skills": "./skills/"
