@@ -14,11 +14,18 @@ sketch-post 是一个五阶段 AI 工作流，用于创作手绘风格中文插�
 
 ### 示例
 
-以下是用 sketch-post 生成的「大模型幻觉」知识图文的前两页：
+以下是用 sketch-post 生成的「大模型幻觉」知识图文（共 7 页）：
 
 <div align="center">
-<img src="images/examples/hallucination-page-1.webp" alt="AI 幻觉知识图文 - 第1页" width="360" />
-<img src="images/examples/hallucination-page-2.webp" alt="AI 幻觉知识图文 - 第2页" width="360" />
+<table><tr>
+<td><img src="images/examples/hallucination-page-1.webp" alt="第1页" width="110" /></td>
+<td><img src="images/examples/hallucination-page-2.webp" alt="第2页" width="110" /></td>
+<td><img src="images/examples/hallucination-page-3.webp" alt="第3页" width="110" /></td>
+<td><img src="images/examples/hallucination-page-4.webp" alt="第4页" width="110" /></td>
+<td><img src="images/examples/hallucination-page-5.webp" alt="第5页" width="110" /></td>
+<td><img src="images/examples/hallucination-page-6.webp" alt="第6页" width="110" /></td>
+<td><img src="images/examples/hallucination-page-7.webp" alt="第7页" width="110" /></td>
+</tr></table>
 </div>
 
 > 查看完整的 AI 幻觉图文及更多知识漫画 → [**潦草虎皮AI说 · 知识漫画**](https://hoopyai.github.io/knowledge.html)
@@ -191,11 +198,18 @@ sketch-post is a 5-phase AI workflow for creating hand-drawn Chinese illustratio
 
 ### Examples
 
-Here are the first two pages of an "AI Hallucination" knowledge post created with sketch-post:
+Here is an "AI Hallucination" knowledge post created with sketch-post (7 pages):
 
 <div align="center">
-<img src="images/examples/hallucination-page-1.webp" alt="AI Hallucination Knowledge Post - Page 1" width="360" />
-<img src="images/examples/hallucination-page-2.webp" alt="AI Hallucination Knowledge Post - Page 2" width="360" />
+<table><tr>
+<td><img src="images/examples/hallucination-page-1.webp" alt="Page 1" width="110" /></td>
+<td><img src="images/examples/hallucination-page-2.webp" alt="Page 2" width="110" /></td>
+<td><img src="images/examples/hallucination-page-3.webp" alt="Page 3" width="110" /></td>
+<td><img src="images/examples/hallucination-page-4.webp" alt="Page 4" width="110" /></td>
+<td><img src="images/examples/hallucination-page-5.webp" alt="Page 5" width="110" /></td>
+<td><img src="images/examples/hallucination-page-6.webp" alt="Page 6" width="110" /></td>
+<td><img src="images/examples/hallucination-page-7.webp" alt="Page 7" width="110" /></td>
+</tr></table>
 </div>
 
 > See the full AI Hallucination post and more knowledge comics → [**HoopyAI Knowledge Hub**](https://hoopyai.github.io/knowledge.html)
