@@ -12,6 +12,17 @@
 
 sketch-post 是一个五阶段 AI 工作流，用于创作手绘风格中文插画社交媒体图文，由 **Nano Banana 2**（Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`）驱动。每篇图文 6–8 页，3:4 竖版，适合发布于任何社交媒体平台。
 
+### 示例
+
+以下是用 sketch-post 生成的 MCP（Model Context Protocol）知识图文的前两页：
+
+<div align="center">
+<img src="images/examples/mcp-page-1.webp" alt="MCP 知识图文 - 第1页" width="360" />
+<img src="images/examples/mcp-page-2.webp" alt="MCP 知识图文 - 第2页" width="360" />
+</div>
+
+> 查看完整的 MCP 图文及更多 AI 知识漫画 → [**潦草虎皮AI说 · 知识漫画**](https://hoopyai.github.io/knowledge.html)
+
 ### 工作原理
 
 当你让 AI 助手创作图文时，sketch-post 不会直接开始生成图片。它会先搜索本周真正热门的话题，询问你想探索哪个方向。确认方向后，深入调研多个信息源，逐页拼出内容结构，在写第一个提示词之前先展示给你看。只有在你确认结构之后，才会为每一页生成详细插画提示词，然后启动图片生成器。整个流程围绕确认节点构建——每一步都等待你的确认，没有你的指令，流程不会推进。
@@ -158,6 +169,12 @@ GOOGLE_AI_API_KEY=AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 /plugin update sketch-post
 ```
 
+### 相关链接
+
+- [潦草虎皮AI说](https://hoopyai.github.io/) — 作者个人主页
+- [从想法到漫画：我的 AI 知识图文创作工作流](https://hoopyai.github.io/post.html?id=creation-workflow) — 创作方法论详解
+- [知识漫画合集](https://hoopyai.github.io/knowledge.html) — 用 sketch-post 创作的 AI 知识图文
+
 ### 许可证
 
 MIT License — 详见 [LICENSE](LICENSE) 文件。
@@ -171,6 +188,17 @@ MIT License — 详见 [LICENSE](LICENSE) 文件。
 ## English
 
 sketch-post is a 5-phase AI workflow for creating hand-drawn Chinese illustration posts for social media, powered by **Nano Banana 2** (Gemini 3.1 Flash Image / `gemini-3.1-flash-image-preview`). Each post is 6–8 pages in 3:4 portrait format, suitable for any social media platform.
+
+### Examples
+
+Here are the first two pages of an MCP (Model Context Protocol) knowledge post created with sketch-post:
+
+<div align="center">
+<img src="images/examples/mcp-page-1.webp" alt="MCP Knowledge Post - Page 1" width="360" />
+<img src="images/examples/mcp-page-2.webp" alt="MCP Knowledge Post - Page 2" width="360" />
+</div>
+
+> See the full MCP post and more AI knowledge comics → [**HoopyAI Knowledge Hub**](https://hoopyai.github.io/knowledge.html)
 
 ### How it works
 
@@ -319,6 +347,12 @@ The free tier allows limited requests per minute. If you hit rate limits, the sc
 ```bash
 /plugin update sketch-post
 ```
+
+### Links
+
+- [HoopyAI](https://hoopyai.github.io/) — Author's homepage
+- [From Idea to Comic: My AI Knowledge Post Creation Workflow](https://hoopyai.github.io/post.html?id=creation-workflow) — The creative methodology behind sketch-post
+- [Knowledge Hub](https://hoopyai.github.io/knowledge.html) — AI knowledge comics created with sketch-post
 
 ### License
 
