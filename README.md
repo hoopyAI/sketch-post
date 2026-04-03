@@ -62,7 +62,7 @@ flowchart LR
 #### Claude Code
 
 ```bash
-/plugin marketplace add hoopyAI/sketch-post
+/plugin marketplace add https://github.com/hoopyAI/sketch-post.git
 /plugin install sketch-post@hoopy-marketplace
 ```
 #### Cursor
@@ -240,7 +240,7 @@ flowchart LR
 #### Claude Code
 
 ```bash
-/plugin marketplace add hoopyAI/sketch-post
+/plugin marketplace add https://github.com/hoopyAI/sketch-post.git
 /plugin install sketch-post@hoopy-marketplace
 ```
 
