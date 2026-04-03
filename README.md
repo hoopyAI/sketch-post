@@ -59,18 +59,12 @@ flowchart LR
 
 > 各平台安装方式不同。Claude Code 和 Cursor 有内置插件市场，Gemini CLI 使用扩展系统，OpenClaw 使用 ClawHub，Codex 和 OpenCode 需手动获取。
 
-#### Claude Code（官方市场）
+#### Claude Code
 
 ```bash
-/plugin install sketch-post@hoopyAI
+/plugin marketplace add hoopyAI/sketch-post
+/plugin install sketch-post@hoopy-marketplace
 ```
-
-#### Claude Code（GitHub）
-
-```bash
-/plugin install github:hoopyAI/sketch-post
-```
-
 #### Cursor
 
 在 Cursor Agent 对话框中：
@@ -173,7 +167,7 @@ GOOGLE_AI_API_KEY=AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ### 更新
 
 ```bash
-/plugin update sketch-post
+/plugin marketplace update hoopy-marketplace
 ```
 
 ### 相关链接
@@ -243,16 +237,11 @@ flowchart LR
 
 **Note:** Installation differs by platform. Claude Code and Cursor have built-in plugin marketplaces. Gemini CLI uses the extensions system. OpenClaw uses ClawHub. Codex and OpenCode require a manual fetch step.
 
-#### Claude Code (Official Marketplace)
+#### Claude Code
 
 ```bash
-/plugin install sketch-post@hoopyAI
-```
-
-#### Claude Code (GitHub)
-
-```bash
-/plugin install github:hoopyAI/sketch-post
+/plugin marketplace add hoopyAI/sketch-post
+/plugin install sketch-post@hoopy-marketplace
 ```
 
 #### Cursor
@@ -359,7 +348,7 @@ The free tier allows limited requests per minute. If you hit rate limits, the sc
 ### Updating
 
 ```bash
-/plugin update sketch-post
+/plugin marketplace update hoopy-marketplace
 ```
 
 ### Links

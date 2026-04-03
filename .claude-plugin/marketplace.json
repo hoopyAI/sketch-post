@@ -1,0 +1,17 @@
+{
+  "name": "hoopy-marketplace",
+  "owner": {
+    "name": "hoopyAI",
+    "email": "hoopyai@outlook.com"
+  },
+  "metadata": {
+    "description": "AI-powered content creation tools by hoopyAI"
+  },
+  "plugins": [
+    {
+      "name": "sketch-post",
+      "source": ".",
+      "description": "AI-powered 5-phase workflow for generating hand-drawn illustration posts for social media"
+    }
+  ]
+}
