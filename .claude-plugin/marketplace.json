@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "sketch-post",
-      "source": ".",
+      "source": "./",
       "description": "AI-powered 5-phase workflow for generating hand-drawn illustration posts for social media"
     }
   ]
