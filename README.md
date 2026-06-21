@@ -173,7 +173,7 @@ GOOGLE_AI_API_KEY=AIzaxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ### 相关链接
 
 - [潦草虎皮AI说](https://hoopyai.space/) — 作者个人主页
-- [从想法到漫画：我的 AI 知识图文创作工作流](https://hoopyai.space/post.html?id=creation-workflow) — 创作方法论详解
+- [从想法到漫画：我的 AI 知识图文创作工作流](https://hoopyai.space/post/creation-workflow) — 创作方法论详解
 - [知识漫画合集](https://hoopyai.space/knowledge.html) — 用 sketch-post 创作的 AI 知识图文
 
 ### 许可证
@@ -354,7 +354,7 @@ The free tier allows limited requests per minute. If you hit rate limits, the sc
 ### Links
 
 - [HoopyAI](https://hoopyai.space/) — Author's homepage
-- [From Idea to Comic: My AI Knowledge Post Creation Workflow](https://hoopyai.space/post.html?id=creation-workflow) — The creative methodology behind sketch-post
+- [From Idea to Comic: My AI Knowledge Post Creation Workflow](https://hoopyai.space/post/creation-workflow) — The creative methodology behind sketch-post
 - [Knowledge Hub](https://hoopyai.space/knowledge.html) — AI knowledge comics created with sketch-post
 
 ### License
